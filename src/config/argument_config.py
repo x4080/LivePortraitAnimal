@@ -15,7 +15,7 @@ from .base_config import PrintableConfig, make_abs_path
 class ArgumentConfig(PrintableConfig):
 
     ########## input arguments ##########
-    source_image: Annotated[str, tyro.conf.arg(aliases=["-s"])] = make_abs_path('../../assets/examples/source/animal1.png')  # path to the source portrait
+    source_image: Annotated[str, tyro.conf.arg(aliases=["-s"])] = make_abs_path('../../assets/examples/source/animal2.png')  # path to the source portrait
     # source_image arguments
     source_image_type: str = 'animal'  # animal, human
 
@@ -47,6 +47,3 @@ class ArgumentConfig(PrintableConfig):
     server_port: Annotated[int, tyro.conf.arg(aliases=["-p"])]  = 8890
     share: bool = True
     server_name: str = "0.0.0.0"
-
-
-

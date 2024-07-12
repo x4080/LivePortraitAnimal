@@ -106,6 +106,10 @@ XPose
 ```bash
 python inference.py
 ```
+📕 Change source_image type in `src/config/argument_config.py`
+```bash
+source_image_type: str = 'animal'  # animal, human
+```
 
 If the script runs successfully, you will get an output mp4 file named `animations/s6--d0_concat.mp4`. This file includes the following results: driving video, input image, and generated result.
 
