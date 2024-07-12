@@ -29,34 +29,42 @@
 <p align="center">
   <img src="./assets/docs/showcase2.gif" alt="showcase">
   <br>
-  🔥 For more results, visit our <a href="https://liveportrait.github.io/"><strong>homepage</strong></a> 🔥
+  🔥 Thanks for the wonderful work! Visit the official code and results in <a href="https://liveportrait.github.io/"><strong>homepage</strong></a> 🔥
 </p>
 
 
 
-## 🔥 Updates
-- **`2024/07/10`**: 💪 We support audio and video concatenating, driving video auto-cropping, and template making to protect privacy. More to see [here](assets/docs/changelog/2024-07-10.md).
-- **`2024/07/09`**: 🤗 We released the [HuggingFace Space](https://huggingface.co/spaces/KwaiVGI/liveportrait), thanks to the HF team and [Gradio](https://github.com/gradio-app/gradio)!
-- **`2024/07/04`**: 😊 We released the initial version of the inference code and models. Continuous updates, stay tuned!
-- **`2024/07/04`**: 🔥 We released the [homepage](https://liveportrait.github.io) and technical report on [arXiv](https://arxiv.org/pdf/2407.03168).
+## 🔥Personal Updates
+- **`2024/07/10`**: 💪 Support animial face. More results in `./assets/docs/`
+<p align="center">
+  <img src="./assets/docs/output5.gif" alt="image">
+</p>
+<p align="center">
+  <img src="./assets/docs/output1.gif" alt="image">
+</p>
 
 
 
 ## Introduction
-This repo, named **LivePortrait**, contains the official PyTorch implementation of our paper [LivePortrait: Efficient Portrait Animation with Stitching and Retargeting Control](https://arxiv.org/pdf/2407.03168).
-We are actively updating and improving this repository. If you find any bugs or have suggestions, welcome to raise issues or submit pull requests (PR) 💖.
+I fork this repo from  **LivePortrait**. The official PyTorch implementation of this paper [LivePortrait: Efficient Portrait Animation with Stitching and Retargeting Control](https://arxiv.org/pdf/2407.03168) in https://github.com/KwaiVGI/LivePortrait.
+
+Adapting to both human and animal faces, I unified the keypoint detection module using **X-Pose** https://github.com/IDEA-Research/X-Pose.
 
 ## 🔥 Getting Started
 ### 1. Clone the code and prepare the environment
 ```bash
-git clone https://github.com/KwaiVGI/LivePortrait
+git clone https://github.com/ShiJiaying/LivePortrait.git
 cd LivePortrait
 
 # create env using conda
-conda create -n LivePortrait python==3.9.18
+conda create -n LivePortrait python==3.10
 conda activate LivePortrait
 # install dependencies with pip
 pip install -r requirements.txt
+
+# Compiling CUDA operators for X-Pose
+cd XPose/models/UniPose/ops
+python setup.py build install
 ```
 
 ### 2. Download pretrained weights
@@ -84,6 +92,12 @@ pretrained_weights
     ├── landmark.onnx
     └── retargeting_models
         └── stitching_retargeting_module.pth
+```
+
+Then download X-Pose weight from [Google Drive](https://drive.google.com/file/d/13gANvGWyWApMFTAtC3ntrMgx0fOocjIa/view) and place it in `./XPose`
+```text
+XPose
+└── unipose_swint.pth
 ```
 
 ### 3. Inference 🚀
