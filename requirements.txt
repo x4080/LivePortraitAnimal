@@ -5,8 +5,6 @@ annotated-types==0.7.0
 anyio==4.4.0
 asttokens==2.4.1
 attrs==23.2.0
-Brotli @ file:///croot/brotli-split_1714483155106/work
-certifi @ file:///croot/certifi_1720453481653/work/certifi
 charset-normalizer==3.3.2
 click==8.1.7
 clip @ git+https://github.com/openai/CLIP.git@dcba3cb2e2827b402d2701e7e1c7d9fed8a20ef1
