@@ -113,4 +113,3 @@ wcwidth==0.2.13
 websockets==11.0.3
 yapf==0.32.0
 mkl-fft
-MultiScaleDeformableAttention
